@@ -1,0 +1,365 @@
+<div class="header pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-dark d-inline-block mb-0">Dashboard</h6>
+
+                    <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class=" breadcrumb-item">
+                                <a href="javascript:void(0)"> <i class="fas fa-home text-dark"> </i> </a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-4 col-md-12">
+                    <div class="card card-stats">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title text-uppercase text-muted mb-0">
+                                        Total traffic
+                                    </h5>
+
+                                    <span class="h2 font-weight-bold mb-0"> 350,897 </span>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                                        <i class="ni ni-active-40"> </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-12">
+                    <div class="card card-stats">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title text-uppercase text-muted mb-0">
+                                        Accessible API
+                                    </h5>
+
+                                    <span class="h2 font-weight-bold mb-0"> 356 </span>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                                        <i class="ni ni-chart-pie-35"> </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-12">
+                    <div class="card card-stats">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title text-uppercase text-muted mb-0">
+                                        Consumed API
+                                    </h5>
+
+                                    <span class="h2 font-weight-bold mb-0"> 65 </span>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class=" icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                                        <i class="ni ni-chart-bar-32"> </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-xl-7">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="m-0">API Call Daily Analysis</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="chart">
+                        <div class="amchart" id="chartuserdash"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-5">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="m-0">API Consumption by Month</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="chart">
+                        <div class="amchart" id="chartuserdash1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="m-0">Recently Consumed API</h3>
+                </div>
+                <div class="card-body p-0">
+                    <ul class=" list-group list-group-flush" data-toggle="checklist">
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-success">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0"><span class="badge badge-default">GET</span> /exchange-rate/currency-code/year/</h5>
+
+                                    <small> Version 1.0.2 </small>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-default" (click)="openModal(viewConsumed)">View</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-warning">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0"><span class="badge badge-default">GET</span> /consumer-alert</h5>
+
+                                    <small> Version 1.0.2 </small>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-default" (click)="openModal(viewConsumed)">View</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-info">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0"><span class="badge badge-default">GET</span> /consumer-alert/(str)</h5>
+
+                                    <small> Version 1.0.3 </small>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-default" (click)="openModal(viewConsumed)">View</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-danger">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0"><span class="badge badge-default">GET</span> /exchange-rate/currency-code</h5>
+
+                                    <small> Version 2.0.1 </small>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-default" (click)="openModal(viewConsumed)">View</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="m-0">New Released API</h3>
+                </div>
+                <div class="card-body p-0">
+                    <ul class=" list-group list-group-flush" data-toggle="checklist">
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-success">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0">/base-rate/bank-code</h5>
+
+                                    <small> Version 1.0.3 </small>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-default" (click)="openModal(viewReleased)">View</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-warning">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0">/base-rate</h5>
+
+                                    <small> Version 1.1.2 </small>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-default" (click)="openModal(viewReleased)">View</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-info">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0">/fx-turn-over</h5>
+
+                                    <small> Version 1.3.4 </small>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-default" (click)="openModal(viewReleased)">View</button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class=" checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                            <div class=" checklist-item checklist-item-danger">
+                                <div class=" checklist-info">
+                                    <h5 class=" checklist-title mb-0">/exchange-rate/currency-code</h5>
+
+                                    <small> Version 2.4.1 </small>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-default" (click)="openModal(viewReleased)">View</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #viewConsumed>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            Consumed API
+        </h6>
+
+        <button
+            aria-label="Close"
+            class="close"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label class="form-control-label">URL</label>
+                <input 
+                  class="form-control"
+                  value="/exchange-rate/currency-code/year/"
+                  type="text"
+                  disabled
+                >
+            </div>
+            <div class="form-group">
+                <label class="form-control-label">Version</label>
+                <input 
+                  class="form-control"
+                  value="1.0.2"
+                  type="text"
+                  disabled
+                >
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer mt--3">
+        <button
+            class="btn btn-outline-danger ml-auto"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            Close
+        </button>
+    </div>
+</ng-template>
+
+<ng-template #viewReleased>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            New Released API
+        </h6>
+
+        <button
+            aria-label="Close"
+            class="close"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label class="form-control-label">URL</label>
+                <input 
+                  class="form-control"
+                  value="/exchange-rate/currency-code/year/"
+                  type="text"
+                  disabled
+                >
+            </div>
+            <div class="form-group">
+                <label class="form-control-label">Version</label>
+                <input 
+                  class="form-control"
+                  value="1.0.2"
+                  type="text"
+                  disabled
+                >
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer mt--3">
+        <button
+            class="btn btn-outline-danger ml-auto"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            Close
+        </button>
+    </div>
+</ng-template>

@@ -1,0 +1,18 @@
+[
+    {
+        "flow_hook": "Pre-proxy",
+        "shared_flow": "-"
+    },
+    {
+        "flow_hook": "Pre-target",
+        "shared_flow": "-"
+    },
+    {
+        "flow_hook": "Post-proxy",
+        "shared_flow": "-"
+    },
+    {
+        "flow_hook": "Post-target",
+        "shared_flow": "-"
+    }
+]

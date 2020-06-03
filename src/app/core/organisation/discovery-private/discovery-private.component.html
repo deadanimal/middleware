@@ -1,0 +1,125 @@
+<div class="header pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-dark d-inline-block mb-0"> Private API Discovery</h6>
+
+                    <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class=" breadcrumb-item">
+                                <a href="javascript:void(0)"> <i class="fas fa-compass text-dark"> </i> </a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="col-lg-6 col-5 text-right">
+                    <button class="btn btn-default btn-sm" (click)="openModal(viewToken)">
+                        Generate token
+                    </button>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-3 border-right">
+                            <ul class="list-group list-group-flush list">
+                                <li class="list-group-item">
+                                    <div class="row align-items-center">
+    
+                                        <div class="col">
+                                            <h4 class="mb-0">
+                                                <span class="badge badge-success">GET</span> Latest Kijang Emas
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row align-items-center">
+    
+                                        <div class="col">
+                                            <h4 class="mb-0">
+                                                <span class="badge badge-success">GET</span> Overnight Policy Rate (OPR)
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-5 py-2">
+                            <div class="form-group">
+                                <label class="form-control-label">URL</label>
+                                <input class="form-control" disabled value="/kijang-emas/">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-2 bg-default">
+                            <div>
+                                <img src="assets/img/default/response.png" style="width: 80%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #viewToken>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            Generated Token
+        </h6>
+
+        <button
+            aria-label="Close"
+            class="close"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label class="form-control-label">Access Token</label>
+                <input 
+                  class="form-control"
+                  value="f5af9f51-07e6-4332-8f1a-c0c11c1e3728"
+                  disabled
+                  type="text"
+                >
+            </div>
+            <div class="form-group">
+                <label class="form-control-label">Refresh Token</label>
+                <input 
+                  class="form-control"
+                  value="f725f747-3a65-49f6-a231-3e8944ce464d"
+                  disabled
+                  type="text"
+                >
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer mt--3">
+        <button
+            class="btn btn-outline-danger ml-auto"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            Close
+        </button>
+    </div>
+</ng-template>
